@@ -5,7 +5,10 @@ const ctx = canvas.getContext("2d");
 
 function getVideo() {
   navigator.mediaDevices
-    .getUserMedia({ video: true, audio: false })
+    .getUserMedia({
+      video: { facingMode: { exact: "environment" } },
+      audio: false
+    })
     .then(localMediaStream => {
       console.log(localMediaStream);
       video.src = window.URL.createObjectURL(localMediaStream);
