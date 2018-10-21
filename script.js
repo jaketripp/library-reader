@@ -1,4 +1,5 @@
 const video = document.querySelector(".player");
+var startButton = document.getElementById("start");
 const canvas = document.querySelector(".webcam");
 const ctx = canvas.getContext("2d");
 
@@ -26,12 +27,8 @@ function paintToCanvas() {
   ctx.translate(canvas.width / 2, canvas.height / 2);
   ctx.rotate(Math.PI / 2);
   ctx.translate(-canvas.width / 2, -canvas.height / 2);
-  // ctx.canvas.width = windowWidth;
-  // ctx.canvas.height = windowWidth * (4/3);
-
   
   return setInterval(() => {
-    // width here means the width of the actual image being rendered if it was right side up
 
     fitVideoOn(canvas, video);
     // ctx.drawImage(video, 0, 0, video.videoHeight, video.videoWidth,     // source rectangle
@@ -74,6 +71,9 @@ var fitVideoOn = function (canvas, video) {
   ctx.drawImage(video, xStart, yStart, renderableWidth, renderableHeight);
 };
 
-getVideo();
+
+startButton.addEventListener("click", function(e) {
+  getVideo();
+})
 
 video.addEventListener("canplay", paintToCanvas);
