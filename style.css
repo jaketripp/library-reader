@@ -46,7 +46,7 @@ body {
 }
 
 canvas.webcam {
-  transform: scaleY(-1);
+  transform: scaleY(-1) scaleX(-1);
 }
 
 video {
