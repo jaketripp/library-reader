@@ -1,0 +1,14 @@
+{
+  "name": "library-reader",
+  "version": "1.0.0",
+  "description": "Read library book titles without straining your neck!",
+  "main": "scripts-FINISHED.js",
+  "scripts": {
+    "start": "browser-sync start --server --files \"*.css, *.html, *.js\""
+  },
+  "author": "Jake Tripp",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.5 <2.23.2"
+  }
+}
