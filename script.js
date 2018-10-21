@@ -24,19 +24,19 @@ function paintToCanvas() {
   canvas.height = windowWidth * (4 / 3);
 
   ctx.translate(canvas.width / 2, canvas.height / 2);
-  ctx.rotate(Math.PI / -2);
+  ctx.rotate(Math.PI / 2);
   ctx.translate(-canvas.width / 2, -canvas.height / 2);
   // ctx.canvas.width = windowWidth;
   // ctx.canvas.height = windowWidth * (4/3);
 
   
   return setInterval(() => {
-    console.log(windowWidth * (4/3));
     // width here means the width of the actual image being rendered if it was right side up
 
     fitVideoOn(canvas, video);
+    // ctx.drawImage(video, 0, 0, video.videoHeight, video.videoWidth,     // source rectangle
+    //                      0, 0, canvas.width, canvas.height); // destination rectangle
     
-    console.log('windowWidth: ', windowWidth);
 
   }, 10);
 }
