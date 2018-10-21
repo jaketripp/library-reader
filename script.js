@@ -1,5 +1,6 @@
 const video = document.querySelector(".player");
 var startButton = document.getElementById("start");
+var error = document.getElementById("error");
 const canvas = document.querySelector(".webcam");
 const ctx = canvas.getContext("2d");
 
@@ -7,6 +8,8 @@ function getVideo() {
   navigator.mediaDevices
     .getUserMedia({
       video: { facingMode: { exact: "environment" } },
+      // use for computer testing - no rear camera
+      // video: true, 
       audio: false
     })
     .then(localMediaStream => {
@@ -16,6 +19,7 @@ function getVideo() {
     })
     .catch(err => {
       console.log("Oh NO!", err);
+      error.textContent = "Sorry, something went wrong! Reset your settings for this site and make sure you have your camera permissions enabled and have a working rear camera!"
     });
 }
 

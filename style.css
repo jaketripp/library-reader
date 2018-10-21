@@ -8,17 +8,17 @@ body {
 }
 .main {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   width: 100vw;
   min-height: 100vh;
 }
 
+.main > * {
+  flex: 1 1 100%;
+}
+
 .header {
-  flex: 1;
   padding: 16px 8px;
-  margin: 0 auto;
-  margin: 0 auto;
 }
 
 .header h1 {
@@ -40,9 +40,14 @@ body {
   transition: .3s ease;
 }
 
-/* #start:hover {
-  background: ;
-} */
+#error {
+  font-size: 30px;
+  padding: 24px;
+}
+
+canvas.webcam {
+  transform: scaleX(-1);
+}
 
 video {
   display: none;
